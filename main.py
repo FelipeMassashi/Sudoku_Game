@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def is_valid(sudoku, x, y, value):
     return value not in sudoku[x, :] and value not in sudoku[:, y] and value not in quadrant(sudoku, x, y)
 
