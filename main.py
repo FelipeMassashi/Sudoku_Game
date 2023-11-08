@@ -39,6 +39,9 @@ if __name__ == '__main__':
                        0, 6, 0, 0, 0, 0, 2, 8, 0,
                        0, 0, 0, 4, 1, 9, 0, 0, 5,
                        0, 0, 0, 0, 8, 0, 0, 7, 9]).reshape([9, 9])
+
+
+    //TESTE TESTE
     solutions = list()
     solver(sudoku, solutions)
     for solution in solutions:
