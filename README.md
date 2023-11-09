@@ -46,5 +46,5 @@ Isso ocorre porque a ACO explora o espaço de busca de forma mais eficiente, evi
 
 ## Membros do grupo
 ```bash
-Felipe Massashi e Humberto Ribeiro
+Felipe Massashi e Humberto Eduardo Ribeiro da Silva
 ```
