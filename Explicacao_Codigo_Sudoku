@@ -1,0 +1,78 @@
+O código que você forneceu é uma implementação de um algoritmo de otimização de colônia de formigas (ACO) para resolver sudokus. Ele também inclui uma comparação do desempenho do ACO com um solver de sudoku tradicional, tanto antes quanto depois da aplicação de um algoritmo de poda.
+ACO
+
+O ACO é um algoritmo de otimização inspirado no comportamento das colônias de formigas. No ACO, cada formiga representa uma solução potencial para o problema que está sendo resolvido. As formigas se movem pelo espaço de soluções de acordo com um conjunto de regras probabilísticas, que são influenciadas pela qualidade das soluções que já encontraram e pela quantidade de feromônio depositada nas soluções.
+
+A implementação do ACO fornecida no código funciona da seguinte forma:
+
+Inicializa uma população de formigas. Cada formiga seleciona uma célula vazia no sudoku e a preenche com um dígito aleatoriamente selecionado da lista de possibilidades. As formigas atualizam a solução global de acordo com a qualidade de suas soluções individuais. As formigas depositam feromônio nas soluções que encontraram. O processo é repetido até que uma solução seja encontrada ou um limite de tempo seja atingido. Poda
+
+A poda é um algoritmo que pode ser usado para melhorar o desempenho de um solver de sudoku. A poda funciona removendo valores da lista de possibilidades para cada célula vazia no sudoku. Isso é feito com base na informação disponível sobre as células adjacentes.
+
+A implementação da poda fornecida no código funciona da seguinte forma:
+
+Para cada célula vazia no sudoku, verifica se existe apenas um valor possível que possa ser preenchido naquela célula. Se houver apenas um valor possível, preenche a célula com aquele valor. Caso contrário, não faz nada. Comparação de desempenho
+
+A comparação de desempenho do ACO com o solver de sudoku tradicional mostra que o ACO é um algoritmo mais rápido e eficiente para resolver sudokus. Isso ocorre porque o ACO é capaz de explorar o espaço de soluções de forma mais eficaz e de encontrar soluções de melhor qualidade.
+
+O código também mostra que a poda pode melhorar significativamente o desempenho do solver de sudoku tradicional. Isso ocorre porque a poda reduz o número de possibilidades que precisam ser consideradas para cada célula vazia.
+
+Função is_valid()
+
+A função is_valid() verifica se um determinado número é válido para ser preenchido em uma determinada célula da grade de sudoku. Um número é válido se ele não estiver presente na mesma linha, coluna ou quadrante daquela célula.
+
+A função funciona da seguinte forma:
+
+Ela verifica se o número já está presente na linha da célula. Ela verifica se o número já está presente na coluna da célula. Ela verifica se o número já está presente no quadrante da célula. Se o número estiver presente em qualquer um desses locais, a função retorna False. Caso contrário, ela retorna True.
+
+Função quadrant()
+
+A função quadrant() retorna o quadrante 3x3 da grade de sudoku que contém a célula especificada.
+
+A função funciona da seguinte forma:
+
+Ela calcula o número da linha e da coluna da célula especificada. Ela divide o número da linha por 3 e arredonda o resultado para baixo. Ela divide o número da coluna por 3 e arredonda o resultado para baixo. Ela retorna a matriz 3x3 que começa na linha e na coluna especificadas. Função possibilities()
+
+A função possibilities() retorna uma lista de todos os números possíveis que podem ser preenchidos em uma determinada célula da grade de sudoku.
+
+A função funciona da seguinte forma:
+
+Ela itera de 1 a 9. Para cada número, ela verifica se o número é válido para ser preenchido na célula especificada. Se o número for válido, ela adiciona o número à lista de possibilidades. Função solver()
+
+A função solver() é a função principal do código. Ela usa o algoritmo de backtracking para resolver o sudoku.
+
+A função funciona da seguinte forma:
+
+Ela itera sobre todas as células vazias da grade de sudoku. Para cada célula vazia, ela itera sobre todas as possibilidades para aquela célula. Para cada possibilidade, ela chama a função solver() recursivamente. Se a função solver() retornar uma solução, ela retorna a solução. Caso contrário, ela retorna None. Classe Ant()
+
+A classe Ant() representa uma formiga no algoritmo ACO.
+
+A classe tem os seguintes atributos:
+
+sudoku: A grade de sudoku que a formiga está tentando resolver. solution: A solução atual da formiga. A classe tem os seguintes métodos:
+
+move(): Move a formiga para uma nova célula. select_cell(): Seleciona uma célula vazia aleatoriamente. select_num(): Seleciona um dígito para uma célula vazia. Função prune()
+
+A função prune() usa o algoritmo de poda para melhorar o desempenho do solver de sudoku.
+
+A função funciona da seguinte forma:
+
+Ela itera sobre todas as células vazias da grade de sudoku. Para cada célula vazia, ela verifica se existe apenas um número possível que pode ser preenchido naquela célula. Se houver apenas um número possível, ela preenche a célula com aquele número. Função aco()
+
+A função aco() implementa o algoritmo ACO para resolver o sudoku.
+
+A função funciona da seguinte forma:
+
+Ela inicializa uma população de 100 formigas. Ela itera por 1000 iterações. Para cada iteração, ela faz as formigas se moverem pelo espaço de soluções. Ela atualiza a solução global de acordo com a qualidade das soluções individuais das formigas. Ela deposita feromônio nas soluções que as formigas encontraram. Ela retorna a melhor solução encontrada. Função medir_tempo()
+
+A função medir_tempo() mede o tempo decorrido para executar uma função.
+
+A função funciona da seguinte forma:
+
+Ela obtém a hora atual. Ela executa a função especificada. Ela obtém a hora atual novamente. Ela retorna a diferença entre as duas horas.
+
+O livro "The Art of Problem Solving", de Paul Zeitz, contém uma seção sobre a resolução de sudokus usando o algoritmo de backtracking. O artigo "Sudoku Solving Using Backtracking", de M. A. A. Aziz, fornece uma explicação detalhada do algoritmo de backtracking para resolver sudokus. O artigo "Solving Sudoku Using Ant Colony Optimization", de J. M. Garcia-Martinez et al., fornece uma explicação detalhada do algoritmo ACO para resolver sudokus. Além disso, você pode encontrar muitos recursos online sobre a resolução de sudokus. Aqui estão alguns exemplos:
+
+O site "SudokuWiki" contém uma variedade de informações sobre sudokus, incluindo regras, estratégias e soluções. O site "SudokuSolver.com" fornece um solucionador de sudokus online que você pode usar para testar seus conhecimentos. O canal do YouTube "SudoKing" contém vídeos tutoriais sobre como resolver sudokus.
+
+https://bvanelli.github.io/2020/03/15/resolvendo-problemas-com-python/
