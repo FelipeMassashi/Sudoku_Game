@@ -1,16 +1,18 @@
 ## No que consiste este trabalho?
 ```bash
-Nosso trabalho consiste na construção de um jogo Sudoku. O Sudoku é um jogo de raciocínio lógico que consiste em preencher
-uma grade de 9x9 com números de 1 a 9, sem que haja repetições na mesma linha, coluna ou bloco de 3x3. Tendo em vista que
-esse jogo possui vários graus de dificuldade e que abrange várias possibilidades de solução, iremos criar um algoritmo,
-com base no algoritmo de colônia das formigas para gerar a solução mais rápida e concreta dada a dificuldade do jogo.
+Nosso trabalho consiste na construção de um jogo Sudoku. O Sudoku é um jogo de
+raciocínio lógico que consiste em preencher uma grade de 9x9 com números de 1 a 9,
+sem que haja repetições na mesma linha, coluna ou bloco de 3x3. Tendo em vista que
+esse jogo possui vários graus de dificuldade e que abrange várias possibilidades de
+solução, iremos criar um algoritmo, com base no algoritmo de colônia das formigas
+para gerar a solução mais rápida e concreta dada a dificuldade do jogo.
 ````
 
 ## Metodologia
 ```bash
-Nossa metodologia para esse trabalho vai ser usar um algoritmo que implemente uma solução ainda mais rápida para Sudoku e
-um algoritmo para otimizar o tempo gasto na resolução do problema de Sudoku. Para deixar o algoritmo mais rápido em sua
-implementação.
+Nossa metodologia para esse trabalho vai ser usar um algoritmo que implemente uma
+solução ainda mais rápida para Sudoku e um algoritmo para otimizar o tempo gasto na
+resolução do problema de Sudoku. Para deixar o algoritmo mais rápido em sua implementação.
 ````
 
 Para otimização de tempo gasto: vamos implementar a ACO, que é um algoritmo de otimização inspirado no comportamento de formigas
