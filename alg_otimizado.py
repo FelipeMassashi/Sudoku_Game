@@ -2,8 +2,7 @@ import numpy as np
 import random
 import time
 import matplotlib.pyplot as plt
-
-# ... (código anterior)
+import threading
 
 def is_valid(sudoku, x, y, value):
     return value not in sudoku[x, :] and value not in sudoku[:, y] and value not in quadrant(sudoku, x, y)
@@ -36,6 +35,7 @@ class Ant:
         self.solution = []
 
     def move(self):
+
         # Seleciona uma célula vazia
         row, col = self.select_cell()
 
@@ -72,9 +72,13 @@ def prune(sudoku):
 
 def aco(sudoku):
     ants = [Ant(sudoku) for _ in range(100)]
-    for _ in range(1000):
-        for ant in ants:
-            ant.move()
+    threads = []
+    for ant in ants:
+        thread = threading.Thread(target=ant.move)
+        thread.start()
+        threads.append(thread)
+    for thread in threads:
+        thread.join()
     best_ant = ants[0]
     for ant in ants:
         if ant.solution < best_ant.solution:
@@ -88,7 +92,23 @@ def medir_tempo(func, *args, **kwargs):
     tempo_decorrido = tempo_final - tempo_inicial
     return resultado, tempo_decorrido
 
+def add_difficulty(sudoku, num_hints_to_remove):
+    modified_sudoku = np.copy(sudoku)
+
+    # Encontre as posições das dicas não nulas (valores diferentes de zero)
+    filled_positions = np.transpose(np.nonzero(modified_sudoku))
+
+    # Embaralhe as posições
+    np.random.shuffle(filled_positions)
+
+    # Remova um número específico de dicas
+    for position in filled_positions[:num_hints_to_remove]:
+        modified_sudoku[tuple(position)] = 0
+
+    return modified_sudoku  
+
 if __name__ == '__main__':
+
     sudoku = np.array([5, 3, 0, 0, 7, 0, 0, 0, 0,
                        6, 0, 0, 1, 9, 5, 0, 0, 0,
                        0, 9, 8, 0, 0, 0, 0, 6, 0,
@@ -99,29 +119,34 @@ if __name__ == '__main__':
                        0, 0, 0, 4, 1, 9, 0, 0, 5,
                        0, 0, 0, 0, 8, 0, 0, 7, 9]).reshape([9, 9])
 
-    solucoes = []
-    solver(sudoku, solucoes)
-    for solucao in solucoes:
+    
+    # Número de dicas a serem removidas para adicionar dificuldade
+    num_hints_to_remove = 2
+
+    # Gere um tabuleiro com um pouco mais de dificuldade
+    difficult_sudoku = add_difficulty(sudoku, num_hints_to_remove)
+
+    solutions = list()
+    solver(difficult_sudoku, solutions)
+
+    number = 0
+    for solucao in solutions:
+        number = number + 1
         print(solucao)
+        print("\n")
 
-    sudoku_copia = np.copy(sudoku)
-    solucao_ant, tempo_ant = medir_tempo(aco, sudoku_copia)
-    print("Solução ACO:")
-    print(solucao_ant)
-    print(f"Tempo decorrido pela otimização ACO: {tempo_ant:.6f} segundos")
 
-    sudoku_copia = np.copy(sudoku)
-    _, tempo_antes_poda = medir_tempo(solver, sudoku_copia, [])
-    prune(sudoku_copia)
-    _, tempo_depois_poda = medir_tempo(solver, sudoku_copia, [])
-    print(f"Tempo decorrido antes da poda: {tempo_antes_poda:.6f} segundos")
-    print(f"Tempo decorrido depois da poda: {tempo_depois_poda:.6f} segundos")
+    print(f"Numero de solucoes: {number}")
+
+    sudoku_copia = np.copy(difficult_sudoku)
+    _, tempo_ant = medir_tempo(aco, sudoku_copia)
+    print(f"Tempo decorrido pela otimizacao ACO: {tempo_ant:.6f} segundos")
 
     # Criar um gráfico
-    labels = ['Otimização ACO', 'Antes da Poda', 'Depois da Poda']
-    tempos = [tempo_ant, tempo_antes_poda, tempo_depois_poda]
+    labels = ['Tempo com otimizacao ACO']
+    tempos = [tempo_ant]
 
-    plt.bar(labels, tempos, color=['blue', 'orange', 'green'])
+    plt.bar(labels, tempos, color=['orange'])
     plt.ylabel('Tempo (segundos)')
-    plt.title('Tempo decorrido para Otimização do Sudoku')
+    plt.title('Tempo para resolver o Sudoku')
     plt.show()
