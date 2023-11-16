@@ -36,6 +36,14 @@ Isso ocorre porque a ACO explora o espaço de busca de forma mais eficiente, evi
 ```bash
 https://docs.google.com/document/d/1BM3RbgQZxehZcj-RIZX2ESw21U9fC4AInzboPZohP5Y/edit?usp=sharing
 ````
+
+## Como rodar os códigos?
+```bash
+  1) Clone o projeto
+  2) Abra uma terminal no diretório do projeto
+  3) Digite "pip install -r requirements.txt" no terminal
+  4) Insira no terminal "python [nome_do_arquivo.py]" para rodar
+````
 ## Membros do grupo
 ```bash
 Felipe Massashi e Humberto Eduardo Ribeiro da Silva
