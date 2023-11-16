@@ -10,19 +10,8 @@ com base no algoritmo de colônia das formigas para gerar a solução mais rápi
 ```bash
 Nossa metodologia para esse trabalho vai ser usar um algoritmo que implemente uma solução ainda mais rápida para Sudoku e
 um algoritmo para otimizar o tempo gasto na resolução do problema de Sudoku. Para deixar o algoritmo mais rápido em sua
-implementação. Usaremos o algoritmo prune() usa a técnica de pruning para resolver sudokus de forma mais rápida. Pruning é
-uma técnica de poda que elimina possibilidades inválidas, reduzindo o número de possibilidades que precisam ser testadas.
+implementação.
 ````
-
-No algoritmo prune(), a poda é realizada da seguinte forma:
-
- - Percorra todas as linhas e colunas do sudoku.
- - Para cada célula vazia, obtenha todas as possibilidades válidas para essa célula.
- - Se houver apenas uma possibilidade válida, atribua essa possibilidade à célula.
-
-A poda é realizada porque, se houver apenas uma possibilidade válida para uma célula, não há necessidade de testar outras 
-possibilidades. Isso pode reduzir significativamente o número de possibilidades que precisam ser testadas, especialmente para 
-sudokus difíceis.
 
 - Para otimização de tempo gasto: vamos implementar a ACO, que é um algoritmo de otimização inspirado no comportamento de formigas
 em busca de alimento. O algoritmo funciona da seguinte forma:
@@ -43,6 +32,11 @@ A ACO pode ser usada para resolver o problema de Sudoku da seguinte forma:
   6) A ACO pode ser usada para resolver Sudokus mais rapidamente do que os algoritmos tradicionais de backtracking.
 
 Isso ocorre porque a ACO explora o espaço de busca de forma mais eficiente, evitando soluções inválidas.
+
+## Desenvolvimento
+```bash
+
+````
 
 Explicação do codigo: https://docs.google.com/document/d/1BM3RbgQZxehZcj-RIZX2ESw21U9fC4AInzboPZohP5Y/edit?usp=sharing
 ## Membros do grupo
