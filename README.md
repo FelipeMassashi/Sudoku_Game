@@ -46,6 +46,6 @@ https://docs.google.com/document/d/1BM3RbgQZxehZcj-RIZX2ESw21U9fC4AInzboPZohP5Y/
 ````
 ## Membros do grupo
 ```bash
-Felipe Massashi e Humberto Eduardo Ribeiro da Silva
+Felipe Massashi (27217931) e Humberto Eduardo Ribeiro da Silva (26184672)
 Institudo de ensino: Centro Universitário do Distrito Federal(UDF)
 ```
