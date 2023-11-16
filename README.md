@@ -13,7 +13,7 @@ um algoritmo para otimizar o tempo gasto na resolução do problema de Sudoku. P
 implementação.
 ````
 
-- Para otimização de tempo gasto: vamos implementar a ACO, que é um algoritmo de otimização inspirado no comportamento de formigas
+Para otimização de tempo gasto: vamos implementar a ACO, que é um algoritmo de otimização inspirado no comportamento de formigas
 em busca de alimento. O algoritmo funciona da seguinte forma:
 
   1) Uma população de formigas é criada e cada formiga representa uma possível solução para o problema.
