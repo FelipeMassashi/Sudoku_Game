@@ -62,13 +62,6 @@ class Ant:
         else:
             return 0
 
-def prune(sudoku):
-    for row in range(9):
-        for col in range(9):
-            if sudoku[row, col] == 0:
-                possibilities_list = possibilities(sudoku, row, col)
-                if len(possibilities_list) == 1:
-                    sudoku[row, col] = possibilities_list[0]
 
 def aco(sudoku):
     ants = [Ant(sudoku) for _ in range(100)]
