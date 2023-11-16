@@ -33,8 +33,9 @@ A ACO pode ser usada para resolver o problema de Sudoku da seguinte forma:
 
 Isso ocorre porque a ACO explora o espaço de busca de forma mais eficiente, evitando soluções inválidas.
 
+## Desenvolvimento e conclusões
 ```bash
- - Desenvolvimento e conclusões: https://docs.google.com/document/d/1BM3RbgQZxehZcj-RIZX2ESw21U9fC4AInzboPZohP5Y/edit?usp=sharing
+https://docs.google.com/document/d/1BM3RbgQZxehZcj-RIZX2ESw21U9fC4AInzboPZohP5Y/edit?usp=sharing
 ````
 ## Membros do grupo
 ```bash
